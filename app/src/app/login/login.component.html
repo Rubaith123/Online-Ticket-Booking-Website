@@ -1,0 +1,34 @@
+    <div class="container py-5">
+        <form #loginForm= "ngForm" (ngSubmit)= "login()" style="max-width: 400px; margin:auto">
+        <div class="card-body">
+            
+
+            
+                <h1 class="display-6 text-center">Login user</h1>
+                <hr>
+           
+
+                <div class="mb-3">
+                    <label for="exampleInputEmail1" class="form-lebel">Email address</label>
+                    <input type="email" autocomplete="on" class="form-control" [(ngModel)]="user.email" name="email">
+                    
+                </div>
+
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-lebel">Password</label>
+                    <input type="password" class="form-control" [(ngModel)]= "user.password" name="password">
+        
+                </div>
+
+                
+               <div class= "alert alert-danger" role="alert" *ngIf="error">
+                   {{error}}
+               </div>
+                    <div class="d-grid gap-2">
+                        <button class="btn btn-sm btn-dark" type="submit">Login</button>
+                    </div>
+                <p>Don't have any account? <a routerLink="/register">Register here</a>
+                    
+                </div>
+            </form>
+

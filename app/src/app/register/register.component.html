@@ -1,0 +1,35 @@
+<div class = "container py-5">
+    <form #registerform="ngForm" (ngSubmit)="register()" style="max-width: 400px; margin: auto">
+    
+      
+     <h1 class="display-6 text center">Regular user</h1>
+     <hr>
+     
+     <div class="mb-3">
+         <label for="exampleInputEmail" class ="form-label">Name</label>
+         <input type="text" autocomplete="off" class ="form-control" [(ngModel)]="user.name" name="name">
+     </div>
+
+     <div class ="mb-3">
+        <label for="exampleInputEmail" class ="form-label">Email address</label>
+        <input type="email" autocomplete="off" class ="form-control" [(ngModel)]="user.email" name="email">
+    </div>
+
+    <div class ="mb-3">
+        <label for="exampleInputPassword" class ="form-label">Password</label>
+        <input type="password" autocomplete="off" class ="form-control" [(ngModel)]="user.password" name="password">
+    </div>
+
+    <div class= "alert alert-danger" role ="alert" *ngIf="error">
+        {{error}}
+    </div>
+
+    <div class="d-grid gap-2">
+        <button class= "btn btn-sm btn-dark" type="submit">Register</button>
+    </div>
+
+    <p>
+        Already have an account? <a routerLink="/login">Login</a>
+    </p>
+    </form>
+</div>
